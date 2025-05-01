@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGPA & CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 p-4">
+  <div class="max-w-4xl mx-auto space~-y-10">
+    <h1 class="text-3xl font-bold text-center mb-6">SGPA & CGPA Calculator</h1>
+
+    <!-- Home Screen -->
+    <div id="home" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div onclick="showSection('sgpaCalc')" class="card blue">SGPA Calculator</div>
+      <div onclick="showSection('cgpaCalc')" class="card green">CGPA Calculator</div>
+      <div onclick="showSection('sgpaToPercentage')" class="card yellow">SGPA to Percentage</div>
+      <div onclick="showSection('cgpaToPercentage')" class="card purple">CGPA to Percentage</div>
+    </div>
+
+    <!-- SGPA Calculator -->
+    <div id="sgpaCalc" class="hidden section">
+      <button onclick="backHome()" class="back-btn">&larr; Back</button>
+      <h2>SGPA Calculator</h2>
+      <div id="subjects" class="space-y-2"></div>
+      <button onclick="addSubject()" class="add-btn">+ Add Subject</button>
+      <button onclick="calculateSGPA()" class="calc-btn">Calculate SGPA</button>
+      <p class="result">SGPA: <span id="sgpaResult">-</span></p>
+    </div>
+
+    <!-- CGPA Calculator -->
+    <div id="cgpaCalc" class="hidden section">
+      <button onclick="backHome()" class="back-btn">&larr; Back</button>
+      <h2>CGPA Calculator</h2>
+      <input type="number" id="totalSgpa" placeholder="Total of SGPAs" class="input-field">
+      <input type="number" id="numSems" placeholder="Number of Semesters" class="input-field">
+      <button onclick="calculateCGPA()" class="calc-btn">Calculate CGPA</button>
+      <p class="result">CGPA: <span id="cgpaResult">-</span></p>
+    </div>
+
+    <!-- SGPA to Percentage -->
+    <div id="sgpaToPercentage" class="hidden section">
+      <button onclick="backHome()" class="back-btn">&larr; Back</button>
+      <h2>SGPA to Percentage</h2>
+      <input type="number" id="sgpaInput" placeholder="Enter SGPA" class="input-field">
+      <button onclick="sgpaToPercent()" class="calc-btn">Convert</button>
+      <p class="result">Percentage: <span id="sgpaPercentResult">-</span></p>
+    </div>
+
+    <!-- CGPA to Percentage -->
+    <div id="cgpaToPercentage" class="hidden section">
+      <button onclick="backHome()" class="back-btn">&larr; Back</button>
+      <h2>CGPA to Percentage</h2>
+      <input type="number" id="cgpaInput" placeholder="Enter CGPA" class="input-field">
+      <button onclick="cgpaToPercent()" class="calc-btn">Convert</button>
+      <p class="result">Percentage: <span id="cgpaPercentResult">-</span></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
